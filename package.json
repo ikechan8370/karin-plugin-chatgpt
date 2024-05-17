@@ -1,9 +1,15 @@
 {
-  "name": "karin-plugin-template",
+  "name": "karin-plugin-chatgpt",
   "version": "1.0.0",
-  "author": "Lain",
+  "author": "ikechan8370",
+  "license": "LGPL-3.0-or-later",
   "type": "module",
   "dependencies": {
+    "eventsource": "^2.0.2",
+    "eventsource-parser": "^1.0.0",
+    "https-proxy-agent": "7.0.1",
+    "node-fetch": "^3.3.1",
+    "openai": "^4.47.1"
   },
   "imports": {
     "#Karin": "./lib/imports/index.js",

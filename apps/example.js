@@ -15,7 +15,7 @@ export class hello extends plugin {
       rule: [
         {
           /** 命令正则匹配 */
-          reg: '^#你好$',
+          reg: '^#aaa$',
           /** 执行方法 */
           fnc: 'hello',
           //  是否显示操作日志 true=是 false=否
@@ -23,43 +23,16 @@ export class hello extends plugin {
           // 权限 master,owner,admin,all
           permission: 'all'
         }
-      ],
-      task: [
-        {
-          // 必选 定时任务名称
-          name: '1分钟打印1次hello',
-          // 必选 cron表达式
-          cron: '0 */1 * * * *',
-          // 必选 方法名
-          fnc: 'taskHello',
-          // 是否显示操作日志 true=是 false=否
-          log: false
-        }
-      ],
-      button: [
-        {
-          // 必选 按钮命令正则
-          reg: '测试按钮',
-          // 必选 按钮执行方法
-          fnc: 'buttonTest'
-        }
-      ],
-      handler: [
-        {
-          // 必选 handler支持的事件key
-          key: 'test.message',
-          // 必选 handler的处理fnc
-          fnc: 'handlerMessage',
-          // handler优先级，数字越小优先级越高，默认2000
-          priority: 1000
-        }
       ]
     })
   }
 
   async hello () {
     // 调用 this.reply 方法回复 hello 关于参数2，请看下文
-    this.reply('hello', { at: false, recallMsg: 0, reply: true, button: false })
+    let g = await this.e.bot.GetGroupInfo(181986905)
+    console.log(g)
+    let fl = await this.e.bot.GetFriendList()
+    this.reply(JSON.stringify(fl))
   }
 
   async taskHello () {
