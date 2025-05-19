@@ -1,3 +1,6 @@
+请使用[新版插件](https://github.com/ikechan8370/karin-plugin-chaite)
+
+
 [Karin](https://github.com/karinjs/karin) 的chatgpt插件
 
 ---
